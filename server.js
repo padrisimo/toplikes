@@ -32,9 +32,7 @@ var data;
 
 req.end(function (res) {
   if (res.error) throw new Error(res.error);
-
   data = res.body;
-  console.log(data);
 });
 
 // GET the json and pas thorw endpoint /vimeos
