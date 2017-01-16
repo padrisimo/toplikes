@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-   
+
   $.ajax({
     url: '/vimeos',
     contentType: 'application/json',
@@ -12,7 +12,22 @@ $( document ).ready(function() {
 
 
       response.vimeos.data.forEach( function(vimeo) {
-        lista.append('<li>'+vimeo.name+'</li>')
+
+        var barsColors = "https://i.vimeocdn.com/portrait/";
+
+        function userPicVal(){
+          if(!vimeo.user.pictures){
+              return barsColors;
+            }else{
+              return vimeo.user.pictures.sizes[2].link;
+            }
+        }
+
+        //create the list
+        lista.append('<li>'+
+        '<a href="'+vimeo.link+'"><h2>'+vimeo.name+'</h2></a>'+
+        '<a href="'+vimeo.link+'"><img src='+userPicVal()+'></a>'
+        +'</li>')
       });
     }
   })
