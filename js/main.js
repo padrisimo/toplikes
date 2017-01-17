@@ -26,7 +26,7 @@ $( document ).ready(function() {
         //create the list
         lista.append('<li>'+
         '<a href="'+vimeo.link+'"><h2>'+vimeo.name+'</h2></a>'+
-        '<a href="'+vimeo.link+'"><img src='+userPicVal()+'></a>'
+        '<a href="'+vimeo.user.link+'"><img src='+userPicVal()+'></a>'
         +'</li>')
       });
     }
