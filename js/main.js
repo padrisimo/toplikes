@@ -1,3 +1,15 @@
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get("/vimeos")
+    .then(function(response) {
+        $scope.vimeos = response.data;
+        console.log($scope.vimeos);
+    });
+});
+
+//legacy code
+
+/*
 $( document ).ready(function() {
 
   $.ajax({
@@ -33,3 +45,5 @@ $( document ).ready(function() {
   })
 
 });
+
+*/
