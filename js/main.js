@@ -2,9 +2,15 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
     $http.get("/vimeos")
     .then(function(response) {
-        $scope.vimeos = response.data;
+        $scope.vimeos = response.data.vimeos.data;
         console.log($scope.vimeos);
+    }, function(response) {
+        //Secondari function handles error
+        console.log("Something went wrong with the call");
     });
+
+    //alternative avatar image
+    $scope.barsColors = "https://i.vimeocdn.com/portrait/";
 });
 
 //legacy code
