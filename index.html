@@ -13,8 +13,8 @@
 <body ng-app="myApp" ng-controller="myCtrl">
 	<h1>api vimeo</h1>
 	<ul id="list">
-		<li ng-repeat="vimeo in vimeos">
-				<a href="{{vimeo.user.link}}" target="_blank"><img class ="avatar" src="{{vimeo.user.pictures ? vimeo.user.pictures.sizes[2].link : barsColors }}" alt=""></a>
+		<li ng-repeat="vimeo in vimeos" ng-if="vimeo.avatar">
+				<a href="{{vimeo.user.link}}"  target="_blank"><img class ="avatar" src="{{vimeo.avatar}}" alt=""></a>
 				<a href="{{vimeo.link}}" target="_blank"><h2 ng-bind="vimeo.name"></h2></a>
 				<p ng-bind="vimeo.description"></p>
 				<span class="playslabel">Plays: </span><span class="plays" ng-bind="vimeo.stats.plays"></span>
