@@ -35,7 +35,7 @@ req.end(function (res) {
   data = res.body;
 });
 
-// GET the json and pas thorw endpoint /vimeos
+// GET the json and pass it thorw endpoint /vimeos
 
 app.get('/vimeos', function (req, res) {
   res.send({ vimeos: data});

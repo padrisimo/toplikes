@@ -11,17 +11,25 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-	<h1>api vimeo</h1>
-	<ul id="list">
-		<li ng-repeat="vimeo in vimeos" ng-if="vimeo.avatar">
-				<a href="{{vimeo.user.link}}"  target="_blank"><img class ="avatar" src="{{vimeo.avatar}}" alt=""></a>
-				<a href="{{vimeo.link}}" target="_blank"><h2 ng-bind="vimeo.name"></h2></a>
-				<p ng-bind="vimeo.description"></p>
-				<span class="playslabel">Plays: </span><span class="plays" ng-bind="vimeo.stats.plays"></span>
-				<span class="linkslabel">Likes: </span><span class="likes" ng-bind="vimeo.metadata.connections.likes.total"></span>
-				<span class="commentslabel">Comments: </span><span class="comments" ng-bind="vimeo.metadata.connections.comments.total"></span>
-		</li>
-	</ul>
+	<header><h1>Angular App over Vimeo Rest API</h1></header>
+	
+	<div class="container-fluid">
+		<div class="form col-sm-3">
+			aqui va un form
+		</div>
+		<ul id="list" class="col-sm-9">
+			<li ng-repeat="vimeo in vimeos" ng-if="vimeo.avatar" class="container-fluid">
+					<a href="{{vimeo.user.link}}"  target="_blank" class="col-sm-2"><img class ="avatar" ng-src="{{vimeo.avatar}}" alt=""></a>
+					<div class="col-sm-10">
+						<a href="{{vimeo.link}}" target="_blank"><h2 ng-bind="vimeo.name"></h2></a>
+						<p ng-bind="vimeo.description"></p>
+						<span class="playslabel">Plays: </span><span class="plays" ng-bind="vimeo.stats.plays"></span>
+						<span class="linkslabel">Likes: </span><span class="likes" ng-bind="vimeo.metadata.connections.likes.total"></span>
+						<span class="commentslabel">Comments: </span><span class="comments" ng-bind="vimeo.metadata.connections.comments.total"></span>
+					</div>
+			</li>
+		</ul>
+	</div>
 
 
 
