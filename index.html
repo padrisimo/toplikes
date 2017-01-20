@@ -11,14 +11,28 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-	<header><h1>Angular App over Vimeo Rest API</h1></header>
+	<header><h1 class="title">Angular App over Vimeo Rest API</h1></header>
 	
 	<div class="container-fluid">
 		<div class="form col-sm-3">
-			aqui va un form
+			<form action="" class="aside">
+				<h2>Filter by ...</h2>
+				<label>Name: <br><input ng-model="search.name"></label><br>
+				<label>Description: <br><input ng-model="search.description"></label><br>
+				<label for="greaterof10">Users with +10 likes: <input type="checkbox" ng-model="end" ng-true-value="25"></label><br>
+				<label for="showvimeos">Show Vimeos: <br>
+				    <select name="showvimeos" ng-model="end">
+				      <option value="" disabled selected>Please Choose...</option>
+				      <option value="12">show 10</option>
+				      <option value="27">show 25</option>
+				      <option value="52">show 50</option>
+				    </select>
+				</label><br>
+			</form>	
 		</div>
-		<ul id="list" class="col-sm-9">
-			<li ng-repeat="vimeo in vimeos" ng-if="vimeo.avatar" class="container-fluid">
+		
+		<ul id="list" class="col-sm-9" ng-init="end=12">
+			<li ng-repeat="vimeo in vimeos | filter:search:strict | limitTo:end "  ng-if="vimeo.avatar" class="container-fluid">
 					<a href="{{vimeo.user.link}}"  target="_blank" class="col-sm-2"><img class ="avatar" ng-src="{{vimeo.avatar}}" alt=""></a>
 					<div class="col-sm-10">
 						<a href="{{vimeo.link}}" target="_blank"><h2 ng-bind="vimeo.name"></h2></a>

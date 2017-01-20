@@ -10,5 +10,6 @@ app.controller('myCtrl', function($scope, $http) {
         return response.data.vimeos.data;
     }).then(vimeos => {
         $scope.vimeos = vimeos;
+        console.log(vimeos);
     }, () => console.log("Something went wrong with the call"));
 });

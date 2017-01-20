@@ -14,6 +14,7 @@ header{
 	background-color: #0084b4;
 	margin-bottom: 3em;
 	color: white;
+	width: 100%;
 }
 
 li{
@@ -27,3 +28,8 @@ h2{
 .plays, .likes {
 	margin-right: 2em;
 }
+
+.aside{
+	position: fixed;
+}
+
