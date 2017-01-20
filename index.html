@@ -20,7 +20,7 @@
 				<label>Name: <br><input ng-model="search.name"></label><br>
 				<label>Description: <br><input ng-model="search.description"></label><br>
 				<label for="greaterof10">Users with +1k likes: <input id="isbox" type="checkbox" ng-chec="personFilter.user.metadata.connections.likes.total" ng-click="personFilter = isOver10"></label><br>
-				<label for="showvimeos">Show Vimeos: <br>
+				<label for="showvimeos" ng-hide="ischeked">Show Vimeos: <br>
 				    <select name="showvimeos" ng-model="end">
 				      <option value="" disabled selected>Please Choose...</option>
 				      <option value="12">show 10</option>

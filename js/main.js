@@ -10,10 +10,12 @@ app.controller('myCtrl', function($scope, $http) {
             //filter
             $scope.isOver10 = function(vimeo) {
               var boxa = document.getElementById("isbox").checked;
-              $scope.end = 52;
+              !boxa ? $scope.end = 12 : $scope.end = 52;
+              !boxa ? $scope.ischeked = false : $scope.ischeked = true;
 
              boxa ? tope = vimeo.user.metadata.connections.likes.total > 1000 : tope = vimeo.user.metadata.connections.likes.total > 0 ;
              return tope;
+
             };
             $scope.end = 12;
 
